@@ -1,6 +1,5 @@
 env/
 htmlcoverage/
 
-.coverage
 db.sqlite3
 *.pyc
