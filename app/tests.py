@@ -1,13 +1,15 @@
 from django.test import TestCase
+from app.models import Blogs
 
 # Create your tests here.
 
-class IncrementTest(TestCase):
+class PostTest(TestCase):
 
-  def test_add(self):
-    result = 4 + 5
-    self.assertEqual(result, 9)
+  def setUp(self):
+    self.blog = Blogs.objects.create(title="Test", description="Test CI/CD", author="Test Jeri")
+    # print(self.blog)
+  def test_blog_post(self):
+    d = self.blog
+    self.assertTrue(isinstance(d, Blogs))
+    self.assertEqual(str(d), "Test")
 
-  def test_subst(self):
-    result = 20 - 19
-    self.assertEqual(result, 1)
